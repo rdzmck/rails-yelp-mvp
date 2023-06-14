@@ -1,0 +1,28 @@
+<!-- app/views/restaurants/_form.html.erb -->
+<%= form_with(model: @restaurant) do |form| %>
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :address, class: "form-label" %>
+    <%= form.text_field :address, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+  <%= form.label :category, class: "form-label" %>
+    <div class="input-group">
+      <%= form.select :category, ["chinese", "italian", "japanese", "french", "belgian"], {}, class: "form-control" %>
+      <div class="input-group-append">
+        <span class="input-group-text">
+          <i class="bi bi-chevron-down"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Create Restaurant", class: "btn btn-primary" %>
+  </div>
+<% end %>

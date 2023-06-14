@@ -1,16 +1,31 @@
+<!-- app/views/layouts/application.html.erb -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsYelpMvp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Restaurant Review App</title>
+  <%= stylesheet_link_tag 'application', 'data-turbolinks-track': 'reload', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Restaurant Review App</a>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <%= link_to "Restaurants", restaurants_path, class: "nav-link" %>
+        </li>
+        <%# <li class="nav-item">
+          <%= link_to "Add Restaurant", new_restaurant_path, class: "nav-link" %>
+        <%# </li> %> %>
+      </ul>
+    </div>
+  </nav>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
-
-  <body>
+  <div class="container">
     <%= yield %>
-  </body>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

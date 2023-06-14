@@ -1,0 +1,16 @@
+<%= form_with(model: [@restaurant, @review], url: restaurant_reviews_path(@restaurant)) do |form| %>
+  <div class="mb-3">
+    <%= form.label :rating, class: "form-label" %>
+    <%= form.number_field :rating, in: 0..5, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :content, class: "form-label" %>
+    <%= form.text_area :content, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Create Review", class: "btn btn-primary" %>
+    <%= link_to "Back", restaurant_path(@restaurant), class: "btn btn-secondary" %>
+  </div>
+<% end %>
